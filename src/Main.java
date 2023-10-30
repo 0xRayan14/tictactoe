@@ -20,4 +20,12 @@ public class Main {
 
         return null;
     }
+
+    static void printBoard() {
+        System.out.println("|---|---|---|");
+        for (int i = 0; i < 9; i += 3) {
+            System.out.println("| " + board[i] + " | " + board[i + 1] + " | " + board[i + 2] + " |");
+            System.out.println("|---|---|---|");
+        }
+    }
 }
