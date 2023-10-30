@@ -28,4 +28,48 @@ public class Main {
             System.out.println("|---|---|---|");
         }
     }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        board = new String[9];
+        turn = "X";
+        String winner = null;
+
+        for (int i = 0; i < 9; i++) {
+            board[i] = String.valueOf(i + 1);
+        }
+
+        printBoard();
+
+        System.out.println("X is the first player. Enter a number to place X in:");
+
+        while (winner == null) {
+            int numInput;
+
+            try {
+                numInput = in.nextInt();
+                if (numInput < 1 || numInput > 9 || !board[numInput - 1].equals(String.valueOf(numInput))) {
+                    System.out.println("Invalid input; retry.");
+                    continue;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input; retry.");
+                in.next(); // Consume the invalid input
+                continue;
+            }
+
+            board[numInput - 1] = turn;
+            turn = (turn.equals("X")) ? "O" : "X";
+
+            printBoard();
+            winner = checkWinner();
+        }
+
+        if (winner.equalsIgnoreCase("draw")) {
+            System.out.println("It's a draw!");
+        } else {
+            System.out.println(winner + " has won! Thanks for playing.");
+        }
+        in.close();
+    }
 }
