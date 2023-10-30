@@ -7,6 +7,8 @@ public class Main {
     static String turn;
 
     static String checkWinner() {
+
+        // The possibilites to win
         String[] winningCombinations = {"123", "147", "159", "258", "357",  "369", "456", "789"};
 
         for (String line : winningCombinations) {
@@ -22,6 +24,7 @@ public class Main {
     }
 
     static void printBoard() {
+        // The tictactoe printed board
         System.out.println("|---|---|---|");
         for (int i = 0; i < 9; i += 3) {
             System.out.println("| " + board[i] + " | " + board[i + 1] + " | " + board[i + 2] + " |");
@@ -30,6 +33,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        // Main methode that return previous methods
         Scanner in = new Scanner(System.in);
         board = new String[9];
         turn = "X";
@@ -54,7 +58,7 @@ public class Main {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input; retry.");
-                in.next(); // Consume the invalid input
+                in.next();
                 continue;
             }
 
