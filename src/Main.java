@@ -1,7 +1,11 @@
+// Import Classes
+
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+
+// Main class of the program
 public class Main {
     static String[] board;
     static String turn;
@@ -47,6 +51,8 @@ public class Main {
 
         System.out.println("X is the first player. Enter a number to place X in:");
 
+        // Retry if you write an invalid input
+
         while (winner == null) {
             int numInput;
 
@@ -68,6 +74,8 @@ public class Main {
             printBoard();
             winner = checkWinner();
         }
+
+        // Ends the program if it's a draw or a win
 
         if (winner.equalsIgnoreCase("draw")) {
             System.out.println("It's a draw!");
