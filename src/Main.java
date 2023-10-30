@@ -1,8 +1,8 @@
 // Import Classes
 
-import java.util.Arrays;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.Arrays; // Manipulating arrays
+import java.util.InputMismatchException; // If it's not expected type
+import java.util.Scanner; // To read input data
 
 
 // Main class of the program
